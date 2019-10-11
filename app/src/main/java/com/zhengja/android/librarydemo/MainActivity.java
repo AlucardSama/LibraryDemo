@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.zhengja.android.comonlib.CommonUtil;
+import com.zhengja.android.comonlib.Tasty;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,5 +19,12 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.text);
         String deviceBrand = CommonUtil.getDeviceBrand();
         textView.setText(deviceBrand);
+        Tasty.s(deviceBrand);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new NullPointerException();
+            }
+        });
     }
 }
